@@ -1,8 +1,19 @@
 import smtplib
 import os
 import sys
+import datetime
+
 suma = 1
 numero = 1
+hora1 = datetime.datetime.now()
+
+def emailghost():
+    print(bcolors.GREEN + """
+ _____ __  __    _    ___ _           ____ _   _  ___  ____ _____
+| ____|  \/  |  / \  |_ _| |         / ___| | | |/ _ \/ ___|_   _|
+|  _| | |\/| | / _ \  | || |   _____| |  _| |_| | | | \___ \ | |  
+| |___| |  | |/ ___ \ | || |__|_____| |_| |  _  | |_| |___) || |  
+|_____|_|  |_/_/   \_\___|_____|     \____|_| |_|\___/|____/ |_|  """ + bcolors.RESET)
 
 class bcolors:
     GREEN = "\033[92m"
@@ -10,8 +21,8 @@ class bcolors:
     yellow = "\033[93m"
     cyan = "\033[36m"
 
-print(" ")
-print(bcolors.yellow + "EMAIL-GHOST")
+emailghost()
+
 print(" ")
 print(bcolors.yellow + "by VIUY" )
 print(bcolors.cyan + "TikTok: viuy.tt" )
@@ -63,10 +74,17 @@ def email():
         print(" ")
         sys.exit()
 
-if(veces == suma):
-    print(" ")
-    print(bcolors.yellow + "spam terminado correctamente")
+emailghost()
+hora2 = datetime.datetime.now()
+print("")
 
 for _ in range(veces):
     email()
     suma = suma + numero
+
+if(veces == suma):
+    print(" ")
+    print(bcolors.yellow + "spam terminado correctamente")
+    print("correos enviados:", veces)
+    print("hora de comienzo:", hora1)
+    print("hora de finalizacion:", hora2)
